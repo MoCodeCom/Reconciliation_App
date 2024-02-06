@@ -1,0 +1,50 @@
+<%- include('../include/head.ejs')%>
+<body>
+    <%- include('../include/header.ejs')%>
+    
+    <% if( ExistFile1 === true && ExistFile2 === true){ %>
+    <div   class="div">
+        <button  id="clear_storage" type="button" name="clear_storage">Clear files</button>
+    </div>
+    <% } %>
+
+
+    <form method="post" action="/process" class="uploads" enctype="multipart/form-data">
+
+        <div class="uploadData">
+            <label>Upload Data For Company</label>
+            <br><br>
+            <input
+            id="input_btn_upload"
+            type="file"
+            name="csvfile"
+            onchange="handleInput"
+            >
+        </div>
+        <button id="submit_btn_upload" type="submit">Submit</button>
+
+    </form>
+
+
+    <form method="post" action="/files" enctype="multipart/form-data">
+            <button type="submit">Upload To Database</button>
+    </form>
+
+    <form 
+    class="div"
+    method="post"
+    action="/data"
+    enctype="multipart/form-data"
+    >
+        <button 
+        id="reco_btn"
+        name="reco_btn"
+        type="submit" 
+        
+        >Reconciliation</button>
+    </form>
+    
+
+    
+</body>
+</html>

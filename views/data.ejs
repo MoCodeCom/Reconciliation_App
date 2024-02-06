@@ -1,0 +1,32 @@
+<%- include('../include/head.ejs')%>
+<body>
+    <%- include('../include/header.ejs')%>
+    <div class="row_item">
+        <% prods.forEach((item,i)=>{ %>
+            <p class="ser"><%= i++ %></p>
+        <div class="row_item_div">
+            
+            <div class="row_item_company">
+                <h5>Reference Company</h5>
+                <p><%= item.ref %></p>
+                <h5>Amount</h5>
+                <p><%= item.amount %></p>
+            </div>
+            
+            
+            <div class="row_item_3">
+                <h5>Reference Thired Party</h5>
+                <p><%= item.ref3 %></p>
+                 <h5>Amount</h5>
+                 <p><%= item.amount3 %></p>
+            </div>
+            
+            <div class="detail_btn">
+                <a href="/detail/<%= item.id %>" class="detail">Details</a>
+            </div>
+           
+        </div>
+        <% }); %>
+    </div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<%- include('../include/head')%>
+<body>
+    <%- include('../include/header')%>
+    <h4>details for id <%= item[0].id%></h4>
+
+    <div class="card">
+        <h5>company reference</h5>
+        <p><%= item[0].ref%></p>
+        <p><%= item[0].amount%></p>
+        <hr>
+        <h5>Thired party reference</h5>
+        <p><%= item[0].ref3%></p>
+        <p><%= item[0].amount3%></p>
+    </div>
+</body>
+</html>

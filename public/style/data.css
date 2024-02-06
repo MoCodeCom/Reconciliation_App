@@ -1,0 +1,28 @@
+.row_item{
+    width: 400px;
+}
+
+.row_item_div{
+    background-color:  rgb(191, 142, 190);
+    margin-top: 20px;
+    padding:10px;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: space-around;
+}
+
+.row_item_company{
+    border: .5px solid white;
+    padding: 5px;
+    
+}
+
+.row_item_3{
+    border: .5px solid white;
+    padding: 5px;
+}
+
+.ser{
+    background-color: rgb(210, 210, 210);
+    text-align: center;
+}

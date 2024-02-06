@@ -1,0 +1,35 @@
+<%- include('../include/head.ejs')%>
+<body>
+    <%- include('../include/header.ejs')%>
+    <% if(sample1 === undefined || sample2 === undefined){ %>
+        <h5> Reload page ...</h5>
+    <% }else{ %>
+    
+    <% if(sample1 === true ){ %>
+        <div class="sample_div">
+            <h5>File sample_1 is upload</h5>
+        </div>
+    <% } %>
+
+    <% if(sample1 === false){ %>
+    <div class="sample_div_not">
+        <h5>File sample_1 is Not Exist</h5>
+    </div>
+    <% } %>
+
+    <% if(sample2 === true ){ %>
+    <div class="sample_div">
+        <h5>File sample_2 is upload</h5>
+    </div>
+    <% } %>
+
+    <% if(sample2 === false ){ %>
+    <div class="sample_div_not">
+        <h5>File sample_2 is Not Exist</h5>
+    </div>
+    <% } %>
+
+    <% } %>
+    
+</body>
+</html>

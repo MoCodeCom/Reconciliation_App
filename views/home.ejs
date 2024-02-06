@@ -1,0 +1,102 @@
+<%- include('../include/head.ejs')%>
+<body>
+    <%- include('../include/header.ejs')%>
+
+    <!--
+    <form method="post" action="/data" enctype="multipart/form-data">
+        <label>Upload Data</label><br><br>
+        <input
+        type="file"
+        name="csvfile"
+        >
+        <br><br>
+        <div>
+            <button type="submit">Upload</button>
+        </div>
+    </form>-->
+
+
+    <form method="post" action="/">
+
+        <section>
+            <label>Post Data</label><br><br>
+            <label>Refrence number</label>
+            <input type="text" name="refInput"><br>
+        </section>
+            
+        <section>
+            <label>Amount</label><span>   </span>
+            <input type="number" name="amountInput">
+        </section>
+
+        <hr>
+        <section>
+            <label>Refrence third party</label>
+            <input type="text" name="ref3Input"><br>
+        </section>
+            
+        <section>
+            <label>Amount third party</label><span>   </span>
+            <input type="number" name="amount3Input">
+        </section>
+
+            <div class="div">
+                <button type="submit">Submit</button>
+            </div>
+    </form>
+
+    <form method="post">
+
+        <section>
+            <label>Get Data</label><br><br>
+            <label>Refrence number</label>
+            <input type="text"><br>
+        </section>
+            
+        <section>
+            <label>Amount</label><span>   </span>
+            <input type="text">
+        </section>
+
+            <div class="div">
+                <button type="submit">Submit</button>
+            </div>
+    </form>
+
+    <form method="post">
+
+        <section>
+            <label>Update Data</label><br><br>
+            <label>Refrence number</label>
+            <input type="text"><br>
+        </section>
+            
+        <section>
+            <label>Amount</label><span>   </span>
+            <input type="text">
+        </section>
+
+            <div class="div">
+                <button type="submit">Submit</button>
+            </div>
+    </form>
+
+    <form method="post">
+
+        <section>
+            <label>Delete Data</label><br><br>
+            <label>Refrence number</label>
+            <input type="text"><br>
+        </section>
+            
+        <section>
+            <label>Amount</label><span>   </span>
+            <input type="text">
+        </section>
+
+            <div class="div">
+                <button type="submit">Submit</button>
+            </div>
+    </form>
+</body>
+</html>
