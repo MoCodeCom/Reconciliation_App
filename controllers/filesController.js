@@ -4,6 +4,7 @@ const pathSample_1 = path.join(__dirname,'..','storage','sample1.csv');
 const pathSample_2 = path.join(__dirname,'..','storage','sample2.csv');
 //const con = require('../util/newrTable');
 const dataCon = require('../models/upload');
+const db = require('../models/db');
 const { stat } = require("fs/promises");
 
 exports.getFilesController = (req, res, next)=>{
@@ -51,8 +52,11 @@ exports.postFilesController = (req, res, next)=>{
             dataCon.uploadData()
             .then(()=>{
                 dataCon.uploadData3();
-            }).then(()=>{
                 
+            }).then(()=>{
+                dataCon.uploadDataJust3();
+                
+              }).then(()=>{
                 res.render('files',{
                     title:'files', 
                     db_process:true,
@@ -65,7 +69,6 @@ exports.postFilesController = (req, res, next)=>{
     })
     .catch(err => console.log(err)); 
 }
-
 
 exports.postCsvFile = (req, res, next)=>{
     
@@ -110,6 +113,15 @@ exports.postCsvFile = (req, res, next)=>{
 
 exports.postReco = (req, res, next)=>{
     dataCon.reco();
-    res.redirect('data');
+    db.fetchAllNoMatch()
+    .then(([rows, filedData])=>{
+        res.render('data',{
+            title:'Data',
+            prods:rows,
+            path:'/data'
+        });
+    })
+    .catch(err => console.log(err));
+    
 }
 

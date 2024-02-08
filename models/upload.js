@@ -23,8 +23,6 @@ module.exports = class DB{
             for(var i = 0; i < source.length; i++){
                 var ref = source[i]["ref"],
                     amount = source[i]["amount"];
-                    
-    
                 var insertStatement = `INSERT INTO sample (ref,amount) VALUES (?,?)`;
                 var items = [ref, amount];
 
@@ -38,19 +36,44 @@ module.exports = class DB{
 
 
     static uploadData3(){
+
+
         return csvtojson().fromFile(fileName3).then(source=>{
             for(var i = 0; i < source.length; i++){
                 var ref3 = source[i]["ref"],
                     amount3 = source[i]["amount"];
-    
                 var insertStatement = `UPDATE sample SET ref3 = "${ref3}", amount3 = "${amount3}" WHERE ref = "${ref3}"`;
-
                 pool.query(insertStatement);
             }
             console.log("All items stored into database successfully for sample 2 ...");
             
         });
     }
+
+    static uploadDataJust3(){
+        pool.query(`CREATE INDEX idx_ref ON sample (ref);`);
+        return csvtojson().fromFile(fileName3).then(source=>{
+            for(var i = 0; i < source.length; i++){
+
+                
+                var ref3 = source[i]["ref"],
+                    amount3 = source[i]["amount"];
+
+                var statement = `INSERT INTO sample (ref, amount, ref3, amount3)
+                SELECT null, null, '${ref3}', '${amount3}'
+                FROM (SELECT COUNT(*) AS ref_count
+                    FROM sample
+                    WHERE ref = '${ref3}') AS counts
+                WHERE ref_count = 0;`;
+                pool.query(statement);
+            }
+            console.log("All items stored into database successfully for just in 3 ...");
+        });
+
+
+    }
+
+
 
     static reco(){
         //const q = "UPDATE sample SET deference = WHEN amount3 = amount THEN 'yes' ELSE 'no' END WEHRE deference IS NULL";
@@ -62,6 +85,13 @@ module.exports = class DB{
         pool.query(q1);
         pool.query(q2);
         return pool.query(q3);
+        
+    }
+
+    //get count of all table rows\
+    static countAll(){
+
+        return;
     }
 
 

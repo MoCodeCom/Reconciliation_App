@@ -72,4 +72,22 @@ section{
     padding: 10px;
 }
 
+table{
+    border: 1px solid  rgb(234, 182, 182);
+    width: 700px;
+}
+
+th{
+    border: 1px solid gray;
+    padding: 0px 10px 0px 10px;
+    font-size: 18px;
+    width: fit-content;
+}
+
+td{
+    padding:10px;
+    border: 1px solid gray;
+    font-size: 15px;
+}
+
 

@@ -43,4 +43,6 @@ module.exports = class DB{
         return db.execute('SELECT * FROM sample WHERE sample.id = ?',[id]);
     }
 
+
+
 }
