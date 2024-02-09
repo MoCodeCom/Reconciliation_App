@@ -9,7 +9,7 @@ let con = mysql.createConnection({
     user:'root',
     port:3307,
     database:'appcompare',
-    password:'MJm198219##'
+    password:'198219'
 });
 
 // connection database mysql and greate table
