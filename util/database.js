@@ -6,7 +6,7 @@ const pool = mysql.createPool({
     user:'root',
     port:3307,
     database:'appcompare',
-    password:'MJm198219##'
+    password:'198219'
 });
 
 module.exports = pool.promise(); //call it in index
