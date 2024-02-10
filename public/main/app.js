@@ -19,6 +19,7 @@ clear_storage_btn.addEventListener('click', function(){
         console.error('Request faild');
     };
     xhr.send();
+    location.reload();
 });
 
 function handleInput(){
